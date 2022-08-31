@@ -4,11 +4,9 @@
 package btctracer;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+   
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Search s = new Search("bc1qtyr35207fd5djffwjqgllqyld7yjzv8jvm77rk");
     }
 }

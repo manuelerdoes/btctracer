@@ -1,40 +1,41 @@
 package btctracer;
 
-public class Transaction {
-  private String senderAddress;
-  private String receiverAddress;
-  private Double btcAmount;
+import java.util.HashMap;
 
-  public Transaction(String sender, String receiver, Double amount) {
-    senderAddress = sender;
-    receiverAddress = receiver;
-    btcAmount = amount;
+public class Transaction {
+  private String txHash;
+  private HashMap<String, Double> sender;
+  private HashMap<String, Double> receiver;
+  private Double totalBTCAmount;
+
+
+  public Transaction(String txHash) {
+    this.txHash = txHash;
+  }
+
+  public void addSender(String address, Double amount) {
+    sender.put(address, amount);
+  }
+
+  public void addReceiver(String address, Double amount) {
+    receiver.put(address, amount);
+  }
+
+  public String getHash() {
+    return txHash;
+  }
+
+  public void calcTotalAmount() {
+    Double total = 0.0;
+    for (Double i : receiver.values()) {
+      total += i;
+    }
+    totalBTCAmount = total;
+  }
+
+  public Double getTotalBTCAmount() {
+    return totalBTCAmount;
   }
   
-  public String getSenderAddress() {
-    return this.senderAddress;
-  }
-
-  public void setSenderAddress(String senderAddress) {
-    this.senderAddress = senderAddress;
-  }
-
-  public String getReceiverAddress() {
-    return this.receiverAddress;
-  }
-
-  public void setReceiverAddress(String receiverAddress) {
-    this.receiverAddress = receiverAddress;
-  }
-
-  public Double getBtcAmount() {
-    return this.btcAmount;
-  }
-
-  public void setBtcAmount(Double btcAmount) {
-    this.btcAmount = btcAmount;
-  }
-
-
 
 }
