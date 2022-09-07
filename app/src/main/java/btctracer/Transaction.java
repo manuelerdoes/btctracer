@@ -11,6 +11,8 @@ public class Transaction {
 
   public Transaction(String txHash) {
     this.txHash = txHash;
+    sender = new HashMap<String, Double>();
+    receiver = new HashMap<String, Double>();
   }
 
   public void addSender(String address, Double amount) {
@@ -19,6 +21,7 @@ public class Transaction {
 
   public void addReceiver(String address, Double amount) {
     receiver.put(address, amount);
+    calcTotalAmount();
   }
 
   public String getHash() {

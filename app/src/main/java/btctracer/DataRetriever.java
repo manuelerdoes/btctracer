@@ -30,7 +30,7 @@ public class DataRetriever {
   }
 
   public InputStreamReader getTransactionData(String hash) {
-    String API_URL2 = "https://api.bitcore.io/api/BTC/mainnet/tx/" + hash;
+    String API_URL2 = "https://api.bitcore.io/api/BTC/mainnet/tx/" + hash + "/coins";
     try {
       URL url = new URL(API_URL2);
       URLConnection request = url.openConnection();
@@ -123,11 +123,11 @@ public class DataRetriever {
     return gson.fromJson(json, AddressJSON[].class);
   }
 
-  public static TransactionJSON[] getTransactionJSONObject(String hash) {
+  public static TransactionJSON getTransactionJSONObject(String hash) {
     DataRetriever dr = new DataRetriever();
     dr.storeTransactionData(hash);
     String json = dr.storedTransactionDataToString();
     Gson gson = new Gson();
-    return gson.fromJson(json, TransactionJSON[].class);
+    return gson.fromJson(json, TransactionJSON.class);
   }
 }
