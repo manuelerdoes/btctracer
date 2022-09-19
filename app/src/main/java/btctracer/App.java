@@ -3,14 +3,37 @@
  */
 package btctracer;
 
-public class App {
-   
+import java.io.File;
+import java.io.IOException;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
-    public static void main(String[] args) {
-        Search s = new Search("bc1q6gwgzjt869p2qq2j2t6ymzk4w34rhna07y5h6k");
-        for (Transaction t : s.getTransactions()) {
-          System.out.println("hash: " + t.getHash());
-          System.out.println("amount: " + t.getTotalBTCAmount());
-        }
+public class App extends Application {
+
+  public static void main(String[] args) {
+    Search s = new Search("bc1q6gwgzjt869p2qq2j2t6ymzk4w34rhna07y5h6k");
+    for (Transaction t : s.getTransactions()) {
+      System.out.println("hash: " + t.getHash());
+      System.out.println("amount: " + t.getTotalBTCAmount());
     }
+    launch(args);
+  }
+
+  @Override
+  public void start(Stage primaryStage) throws Exception {
+    primaryStage.setTitle("BTC Investigator");
+    try {
+      File file = new File("src/main/resources/GUI.fxml");
+      Parent root = FXMLLoader.load(file.toURI().toURL());
+      Scene scene = new Scene(root);
+      primaryStage.setScene(scene);
+      primaryStage.show();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+  }
 }

@@ -10,8 +10,8 @@ public class Search {
 
   private ArrayList<Transaction> transactions;
   private HashMap<Transaction, Boolean> transactionMap; // true -> incoming
-  private String[] OGTransactionHashes; // outgoing
-  private String[] ICTransactionHashes; // incoming
+  // private String[] OGTransactionHashes; // outgoing
+  // private String[] ICTransactionHashes; // incoming
 
   public Search(String address) {
     this.address = address;
@@ -22,23 +22,23 @@ public class Search {
       getTransactionObject(aj[i].getMintTxid(), true);
       getTransactionObject(aj[i].getSpentTxid(), false);
     }
-    ajArrayToTransactionList(aj);
+    // ajArrayToTransactionList(aj);
   }
 
   public void addTransactionToArrayList(Transaction t) {
     transactions.add(t);
   }
 
-  public void ajArrayToTransactionList(AddressJSON[] aj) {
-    for (int i = 0; i < aj.length; i++) {
-      if (aj[i].getSpentTxid() != null) {
-        OGTransactionHashes[i] = aj[i].getSpentTxid();
-      }
-      if (aj[i].getMintTxid() != null) {
-        ICTransactionHashes[i] = aj[i].getMintTxid();
-      }
-    }
-  }
+  // public void ajArrayToTransactionList(AddressJSON[] aj) {
+  //   for (int i = 0; i < aj.length; i++) {
+  //     if (aj[i].getSpentTxid() != null) {
+  //       OGTransactionHashes[i] = aj[i].getSpentTxid();
+  //     }
+  //     if (aj[i].getMintTxid() != null) {
+  //       ICTransactionHashes[i] = aj[i].getMintTxid();
+  //     }
+  //   }
+  // }
 
   public void getTransactionObject(String hash, Boolean incoming) { // true -> incoming
     Transaction t = new Transaction(hash);
