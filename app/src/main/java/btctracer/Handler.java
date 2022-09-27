@@ -7,7 +7,7 @@ public class Handler {
   private Wallet root;
   private Level l_0;
   private ArrayList<Level> levels;
-  public static String output;
+  public static String output = "";
 
   public Handler(String rootAddress, int depth) {
     this.rootAddress = rootAddress;

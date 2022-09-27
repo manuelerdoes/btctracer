@@ -15,7 +15,7 @@ public class App extends Application {
 
   public static void main(String[] args) {
    
-    //Handler h = new Handler("bc1qyquuwt57xjteqs7feglsvgfq8qcpdv5cmzt9kv",2);
+    //new Handler("fd3354eb81a5f09dad5990a92e9cbd6c166cf65a0be18c3dedc81516ce7a03ab",1);
     //System.out.print(Handler.output);
     launch(args);
   }
