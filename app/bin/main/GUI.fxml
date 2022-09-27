@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="btctracer.Controller">
    <children>
       <GridPane prefHeight="427.0" prefWidth="600.0">
@@ -31,9 +30,7 @@
             </TextField>
             <ComboBox fx:id="depthInput" prefWidth="150.0" promptText="search depth" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
             <Button fx:id="submitButton" mnemonicParsing="false" onAction="#onButtonAction" text="start investigation" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
-            <TextArea fx:id="tf1" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" />
-            <TextArea fx:id="tf2" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextArea fx:id="tf3" editable="false" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextArea fx:id="tf1" editable="false" prefHeight="366.0" prefWidth="486.0" GridPane.columnSpan="3" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </children>

@@ -43,7 +43,7 @@ public class AddressJSON {
     private String script;
     @SerializedName("value")
     @Expose
-    private Integer value;
+    private Double value;
     @SerializedName("confirmations")
     @Expose
     private Integer confirmations;
@@ -139,11 +139,11 @@ public class AddressJSON {
         this.script = script;
     }
 
-    public Integer getValue() {
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(Integer value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 

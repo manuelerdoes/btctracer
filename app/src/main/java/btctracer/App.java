@@ -14,11 +14,9 @@ import javafx.stage.Stage;
 public class App extends Application {
 
   public static void main(String[] args) {
-    Search s = new Search("bc1q6gwgzjt869p2qq2j2t6ymzk4w34rhna07y5h6k");
-    for (Transaction t : s.getTransactions()) {
-      System.out.println("hash: " + t.getHash());
-      System.out.println("amount: " + t.getTotalBTCAmount());
-    }
+   
+    //Handler h = new Handler("bc1qyquuwt57xjteqs7feglsvgfq8qcpdv5cmzt9kv",2);
+    //System.out.print(Handler.output);
     launch(args);
   }
 
